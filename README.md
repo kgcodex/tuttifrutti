@@ -30,7 +30,12 @@ A collection of tiny, lightweight, and highly optimized Python utilities to make
 Tired of guarding deeply nested dictionaries or object lookups with defensive if configurations? OptionalChain brings clean, safe JavaScript-style optional chaining (?.) directly to Python.
 
 ```py
+from dataclasses import dataclass
+from datetime import date
+from typing import Any, Literal
+
 from tuttifrutti import OptionalChain
+
 
 @dataclass
 class Course:
@@ -73,28 +78,17 @@ app_response = AppResponse(
     status=200,
 )
 
-ans: int | None = (
-    app_response
-    .data
-    .courses[0]
-    .price
-    .map(lambda x: x //12)
-    .get()
-)
-print(ans) # Output: 166
+ans: int | None = app_response.data.courses[0].price.map(lambda x: x // 12).get()
+print(ans)  # Output: 166
 
 
-def append_at_sign(username:str)->str:
-    return f"{"@"}username"
+def append_at_sign(username: str) -> str:
+    return f"{'@'}{username}"
 
-ans = (
-    app_response
-    .data
-    .username
-    .map(append_at_sign)
-    .get()
-)
-print(ans) # Output: None
+
+result = app_response.data.username.map(append_at_sign).get()
+print(result)  # Output: None
+
 ```
 
 More tiny utilities are actively cooking and coming soon!
