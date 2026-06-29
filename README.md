@@ -1,10 +1,10 @@
 <h1>
-  <img src="logo.png" width="32" style="vertical-align: middle; border-radius: 8px;" />
+  <img src="https://raw.githubusercontent.com/kgcodex/tuttifrutti/main/logo.png" width="32" style="vertical-align: middle; border-radius: 8px;" />
   tuttifrutti
 </h1>
 
 <div align="center">
-  <img src="banner.png" alt="preview" width="700" style="border-radius: 14px;" />
+  <img src="https://raw.githubusercontent.com/kgcodex/tuttifrutti/main/banner.png" alt="preview" width="700" style="border-radius: 14px;" />
 </div>
 
 A collection of tiny, lightweight, and highly optimized Python utilities to make your everyday coding sweet and crisp. Fully typed, zero external dependencies, and built with lazy-loading for maximum performance.
