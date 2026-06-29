@@ -1,0 +1,30 @@
+name: Publish Documentation
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "docs/**"
+      - "mkdocs.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Documentation Tools
+        run: uv install mkdocs mkdocs-material mkdocs-jupyter
+
+      - name: Deploy to GitHub Pages
+        run: uv run mkdocs gh-deploy --force

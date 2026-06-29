@@ -1,0 +1,63 @@
+site_name: tuttifrutti
+site_description: A collection of tiny, lightweight Python utilities.
+site_author: Kunal Goel
+site_url: https://kgcodex.github.io/tuttifrutti/
+
+theme:
+  name: material
+
+  logo: logo.png
+  favicon: logo.png
+
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/link
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off
+        name: Switch to system preference
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+  features:
+    - navigation.tabs
+    - navigation.footer
+    - header.autohide
+    - search.highlight
+    - search.share
+
+repo_name: kgcodex/tuttifrutti
+repo_url: https://github.com/kgcodex/tuttifrutti
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/kgcodex
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/tuttifrutti/
+
+plugins:
+  - search
+
+  - mkdocs-jupyter:
+      include_source: true
+      no_prompt: true
+
+nav:
+  - Home: index.md
+  - API:
+      - OptionalChain: OptionalChain.ipynb
+      - Result: Result.ipynb
