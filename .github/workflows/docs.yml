@@ -24,7 +24,7 @@ jobs:
           enable-cache: true
 
       - name: Install Documentation Tools
-        run: uv install mkdocs mkdocs-material mkdocs-jupyter
+        run: uv add mkdocs mkdocs-material mkdocs-jupyter
 
       - name: Deploy to GitHub Pages
         run: uv run mkdocs gh-deploy --force
